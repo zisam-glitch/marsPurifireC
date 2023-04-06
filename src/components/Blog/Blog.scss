@@ -1,0 +1,11 @@
+@import "../../css-config/mixins.scss";
+.title-blog{
+    max-width: 85%;
+    margin: 100px auto;
+    h1{
+        font-size: 100px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+}

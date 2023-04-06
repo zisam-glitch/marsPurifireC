@@ -1,0 +1,374 @@
+@import "../../../css-config/mixins.scss";    
+.cont{
+display: block;
+justify-content: space-between;
+align-items: center;
+margin: auto;
+@include md{
+    margin: auto;
+    max-width: 1200px;
+}
+}
+.image-content-mob{
+    img{
+    width: 100%;
+    padding: 20px;
+        @include md {
+            width: 100%;
+            display: none;
+        }
+    }    
+}
+.maincontent{
+    display: grid;
+    grid-gap: 20px;
+    align-items: center;
+    min-height: 40vh;
+    padding: 0 40px;
+    grid-auto-flow: columns dense;
+    @include md {
+        padding: 0;
+        grid-template-columns: 1fr 1fr;
+        min-height: 80vh;
+    }
+    .typewriter{
+        font-size: 40px;
+        font-weight: 500;
+        color: #1b75bc;
+        padding-bottom: 20px;
+
+        @include md {
+            font-size: 80px;
+            font-weight: 800;
+            padding-bottom: 70px;
+            text-align: start;
+        }    
+    }
+    .heading-text1{
+        font-size: 40px;
+        font-weight: 500;
+        color: #000;
+
+        padding-bottom: 20px;
+        @include md {
+            font-size: 80px;
+            font-weight: 800;
+            padding-bottom: 60px;
+            text-align: start;
+        }    
+    }
+    .heading-text2{
+        font-size: 40px;
+        font-weight: 500;
+        color: #000;
+
+        padding-bottom: 20px;
+        @include md {
+            font-size: 80px;
+            font-weight: 800;
+            padding-bottom: 50px;
+            text-align: start;
+        }    
+    }
+    .desc{
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: #000;
+        margin-top: -10px;
+
+        @include md {
+            text-align: start;
+
+        }    
+    }
+    .shop-now{
+        border: 0;
+        background-color: #1b75bc;
+        border: none;
+        color: white;
+        padding: 12px 42px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 30px;
+        margin: 20px 0 40px 0 ;
+        @include md{
+            margin: 20px 0 0 0;
+        }
+        
+    }
+    .shop-now:hover{
+        background-color: #154d77;
+    }
+    .image-content-mob{
+        img{
+        width: 100%;
+            @include md {
+                width: 100%;
+                display: none;
+            }
+        }    
+    }
+    .image-content{
+        img{
+            width: 100%;
+            display: none;
+            @include md {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+.product-s{
+    background-color: #0202020c;
+    padding-bottom: 100px;
+    h1{
+        text-align: center;
+        padding-top: 110px;
+        padding-bottom: 20px;
+        font-size: 36px;
+        font-weight: 500;
+        @include md{
+            padding-bottom: 60px;
+        }
+    }
+    .all-products{
+        display: grid;
+        grid-gap: 20px;
+        align-items: center;
+        justify-content: center;   
+        max-width: 1200px;
+        margin: 0 auto !important;
+        padding: 40px;
+        @include md{
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 0;
+        }
+    }
+    .product{
+        overflow: hidden;
+        background: #fff;
+        color: #000;
+        width: 100%;
+        height: 600px;
+        padding: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+    img{
+        width:100%;
+        padding-bottom: 10px;
+        transition: all 0.3s ease;
+        
+    }
+    img:hover{
+        scale: 1.1;
+    }
+    .product-info{
+        text-align: center;
+        .ctg{
+            font-size: 14px;
+            color: #00000094;
+            cursor: pointer;
+        }
+        .ctg:hover{
+            color: #154d77;
+        }
+        .product-title{
+            font-size: 22px;
+            padding: 15px;
+            width: 400;
+            cursor: pointer;
+        }
+        .product-title:hover{
+            color: #154d77;
+        }
+        .product-btn{
+        border: 0;
+        background-color: #1b75bc;
+        border: none;
+        color: white;
+        padding: 12px 42px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 30px;
+        margin: 20px 0 50px 0;
+        }
+        .product-btn:hover{
+            background-color: #154d77;
+        }
+
+    }
+       
+
+}
+.stg{
+    h1{
+        text-align: center;
+        padding-top: 110px;
+        padding-bottom: 50px;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 40px;
+        @include md{
+            padding-bottom: 100px;
+        }
+    }
+    .stage{
+        margin: auto;
+        max-width: 1200px;
+        display: grid;
+        overflow: hidden;
+        @include md{
+            grid-template-columns: 20% 60% 20%;
+        }
+        .vdo{
+            video{
+                width: 100%;
+            }
+        }
+    }
+    .scep1{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        text-align: center;
+        align-items: center;
+        @include md{
+            text-align: right;
+        }
+        span{
+            font-size: 18px;
+            line-height: 40px;
+            width: 600;
+        }
+    }
+    .scep2{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        text-align: center;
+        align-items: center;
+        @include md{
+            text-align: left;
+        }
+        span{
+            font-size: 18px;
+            line-height: 40px;
+            width: 600;
+        }
+    }
+}
+
+.icon-info{
+    max-width: 1200px;
+    margin: 70px auto;
+    display: grid;
+    align-items: center;
+    grid-gap: 40px;
+    padding: 40px;
+    @include md{
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 0;
+        margin: 200px auto;
+    }
+
+    .center-2-3{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        @include md{
+            grid-gap: 40px;
+        }    
+    }
+    .card-icon{
+        text-align: center;
+        padding: 60px 50px ;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 15%);
+        svg{
+            font-size: 100px;
+            color: #1b75bc;
+        }
+        .header-icon{
+            font-size: 25px; 
+            font-weight: 500;
+            padding: 10px 0 20px 0;
+        
+        }
+        .desc-icon{
+            color: #00000054;
+        }
+    }
+}
+.kills{
+    background-color: #0202020c;
+    padding-bottom: 110px;
+    h1{
+        text-align: center;
+        padding: 70px 40px 20px 40px;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 40px;
+        @include md{
+            padding: 110px 40px;
+        }
+    }
+    .imgsec{
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        padding: 40px;
+        grid-gap: 30px;
+        @include md{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+    }
+    .imgsc{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 15px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 8%);
+        height: 280px;
+        justify-content: center;
+        align-items: center;
+        @include md{
+            padding: 55px 35px;
+            height: 280px;
+        }
+
+        img{
+            width: 100px;
+        }
+        h5{
+            font-size: 18px;
+            padding: 10px;
+            font-weight: 500;
+        }
+    }
+}
+.mobl{
+    display: block;
+    overflow: hidden;
+    @include md{
+        display: none;
+    }
+}
+.dext{
+    display: none;
+    @include md{
+        display: block;
+    }
+}

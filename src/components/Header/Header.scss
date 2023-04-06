@@ -1,0 +1,78 @@
+@import "../../css-config/mixins.scss";
+@import "../../css-config/mixins.scss";
+
+.main-header {
+    width: 100%;
+    padding: 0 20px;
+    z-index: 99;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    @include md {
+        padding: 0 40px;
+    }
+    .header-content {
+        // display: flex;
+        .navbar{
+            height: 100px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .navbar-logo{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                img{
+                    width: 180px;
+                }
+            }
+        }
+        .nav-items {
+            display: flex;
+            list-style: none;
+            text-align: center;
+            width: 70vw;
+            justify-content: flex-end;
+            margin-right: 2rem;
+          }
+          
+          .nav-item {
+            display: flex;
+            align-items: center;
+            height: 10vh;
+          }
+          
+          .nav-item a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+            margin-right: 2rem;
+            padding: 6px 16px;
+            border-radius: 5px;
+          }
+          
+          .nav-item a:hover {
+            background: rgb(0, 212, 212);
+          }
+    }
+    
+    &.sticky-header {
+        background-color: #fff;
+        color: rgb(0, 0, 0);
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.09);
+        position: sticky;
+        top: 0;
+        transform: translateY(-60px);
+        animation: StickyHeader 0.3s ease forwards;
+  
+    }
+}
+
+@keyframes StickyHeader {
+    0% {
+        transform: translateY(-60px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,58 @@
+@import "../../css-config/mixins.scss";
+
+.mainContainer {
+    margin: 80px auto;
+    max-width: 1200px;
+    @include md{
+        margin: 150px auto;
+    }
+
+    h1 {
+        text-align: center;
+        padding-bottom: 10px;
+        font-size: 36px;
+        font-weight: 500;
+        @include md{
+            padding-bottom: 70px;
+        }
+    }
+
+    .container {
+        padding: 40px 0 60px 0;
+
+        img {
+            width: 195px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}
+
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.slick-dots li{
+    margin: 0 !important;
+    width: 16px !important;
+}
+.slick-dots li button:before{
+    font-size: 10px !important;
+}
+
+.slick-dots li.slick-active button:before{
+    color: #154d77 !important;
+}
+.slick-dots li button:before{
+    color: #154d77 !important;
+}
