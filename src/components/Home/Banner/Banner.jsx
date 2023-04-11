@@ -136,7 +136,7 @@ const Banner = () => {
                         <div className="card-icon">
                             <AiFillCalendar className="icon-c" />
                             <h1 className="header-icon">Quiet Operation</h1>
-                            <p className="desc-icon">Minimise disruption during patient care with quite operation with an average db level of less than 20db.</p>
+                            <span className="desc-icon">Minimise disruption during patient care with quite operation with an average db level of less than 20db.</span>
                         </div>
                     </div>
                 </div>

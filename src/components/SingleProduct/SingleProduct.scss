@@ -40,15 +40,17 @@
                     font-size: 20px;
                     line-height: 28px;
                     margin-bottom: 20px;
+                    letter-spacing: 2px;
                     @include md {
-                        font-size: 24px;
-                        line-height: 32px;
+                        font-size: 34px;
+                        line-height: 38px;
+                        padding-bottom: 10px;
+
                     }
                 }
                 .price {
                     font-size: 24px;
                     line-height: 32px;
-                    margin-bottom: 20px;
                 }
                 .desc {
                     font-size: 14px;
@@ -145,3 +147,80 @@
         }
     }
 }
+.containerz {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin: 90px auto ;
+    word-break: break-all;
+    align-items: start;
+    text-align: start;
+  }
+  
+  .bloc-tabs {
+    display: flex;
+  }
+  .tabs {
+  
+    padding: 12px 0 ;
+    margin: 0 25px 0 0;
+    text-align: start;
+    cursor: pointer;
+    box-sizing: content-box;
+    position: relative;
+    outline: none;
+    background-color: #fff;
+    font-size: 18px;
+  }
+
+  
+  .active-tabs  {
+    background: white;
+    border-bottom: 1px solid transparent;
+    color: #6516aa;
+  }
+  
+  .active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    background-color: #8e2de2;
+    height: 3px;
+  }
+  
+  
+  
+  button {
+    border: none;
+    
+  }
+  .content-tabs {
+    flex-grow : 1;
+  }
+  .content {
+    background: white;
+    padding: 40px 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  .content h2 {
+    padding: 0px 0 5px 0px;
+  }
+  .content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+  }
+  .content p {
+    width: 100%;
+    height: 100%;
+  }
+  .active-content {
+    display: block;
+  }
+  

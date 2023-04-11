@@ -19,7 +19,7 @@
     .contact-form {
         max-width: 100%;
         margin: auto;
-
+        overflow: hidden;
         .contact-inputs {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -40,7 +40,7 @@
                 letter-spacing: 1px;
                 padding: 10px 0 0 10px;
                 background-color: #00000009;
-                border-radius: 5px;
+                border-radius: 5px;               
             }
 
             .inputs{

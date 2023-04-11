@@ -33,7 +33,7 @@ const Blog = () => {
     return (
         <>
         <div className="title-blog">
-            <h1>Blog</h1>
+            <h1>Our Latest News</h1>
         </div>
             <div>
                 <Post posts={posts} />

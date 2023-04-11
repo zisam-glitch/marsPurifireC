@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import SingleProduct from "./components/SingleProduct/SingleProduct";
+import SinglePost from "./components/SinglePost/singlePost";
 import About from "./components/about/about";
 import Shop from "./components/shop/shop";
 import Denticity from "./components/Denticity/Denticity";
@@ -21,6 +22,7 @@ import Blog from "./components/Blog/Blog";
 
 
 
+
 function App() {
     return (
         <BrowserRouter>
@@ -29,6 +31,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/product/:id" element={<SingleProduct />} />
+                    <Route path="/post/:id" element={<SinglePost />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/faqs" element={<FAQ />} />
                     <Route path="/denticity" element={<Denticity />} />
@@ -40,7 +43,6 @@ function App() {
                     <Route path="/shop" element={<Shop />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/blog" element={<Blog />} />
-
 
                 </Routes>
                 <Footer />

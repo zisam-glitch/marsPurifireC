@@ -1,30 +1,39 @@
-
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
-import "./Singlepost.scss";
+import ReactMarkdown from 'react-markdown'
+import "./SinglePost.scss";
 
-const SingleProduct = () => {
+const SinglePost = () => {
+
     const { id } = useParams();
     const { data } = useFetch(`/api/posts?populate=*&[filters][id]=${id}`);
 
-    if (!data) return;
+  
+
+
+    if(!data) return;
     const post = data?.data[0].attributes
 
     return (
-        <div className="single-post-main-content">
-            <div className="lay">
-                <div className="post-area">
-                    <div className="left">
-                        <img src={process.env.REACT_APP_DEV_URL +
-                            post.image.data.attributes.url} alt="" />
-                    </div>
-                    <div className="right">
-                        <span className="name">{post.title}</span>
-                    </div>
-                </div>
+        <>
+        <div className="sg-post">
+            <div className="titl-sg">{post.title}</div>
+            <div className="img">
+               <img src={process.env.REACT_APP_DEV_URL +
+               post.img.data.attributes.url } alt="" />
+            </div >
+            <div className="infx">
+            <span className="author">By: {post.author}</span>
+            <span> - </span>
+            <span className="date">On: {post.date}</span>
             </div>
+            <ReactMarkdown>
+            {post.desc}
+            </ReactMarkdown>
+            <div className="trd">{post.descx}</div>
         </div>
+        </>
     );
 };
 
-export default SingleProduct;
+export default SinglePost;

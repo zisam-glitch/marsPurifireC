@@ -3,6 +3,7 @@ import { Context } from "../../utils/context";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
+import ReactMarkdown from 'react-markdown'
 import {
     FaFacebookF,
     FaTwitter,
@@ -18,6 +19,11 @@ const SingleProduct = () => {
     const { id } = useParams();
     const { handleAddToCart } = useContext(Context);
     const { data } = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
+    const [toggleState, setToggleState] = useState(1);
+
+    const toggleTab = (index) => {
+        setToggleState(index);
+    };
 
     const decrement = () => {
         setQuantity((prevState) => {
@@ -30,7 +36,7 @@ const SingleProduct = () => {
     };
 
 
-    if(!data) return;
+    if (!data) return;
     const product = data?.data[0].attributes
 
     return (
@@ -39,12 +45,16 @@ const SingleProduct = () => {
                 <div className="single-product-page">
                     <div className="left">
                         <img src={process.env.REACT_APP_DEV_URL +
-                        product.image.data.attributes.url } alt="" />
+                            product.image.data.attributes.url} alt="" />
                     </div>
                     <div className="right">
                         <span className="name">{product.title}</span>
                         <span className="price">{product.price}</span>
-                        <span className="desc">{product.description}</span>
+                        <ReactMarkdown>
+                            {product.description}
+                        </ReactMarkdown>
+
+
 
                         <div className="cart-buttons">
                             <div className="quantity-buttons">
@@ -66,7 +76,7 @@ const SingleProduct = () => {
 
                         <span className="divider" />
                         <div className="info-item">
-                        <span className="text-bold">
+                            <span className="text-bold">
                                 Category:{" "}
                                 <span>
                                     {
@@ -85,6 +95,56 @@ const SingleProduct = () => {
                                     <FaPinterest size={16} />
                                 </span>
                             </span>
+                        </div>
+                    </div>
+                </div>
+                <div className="descprtr">
+                    <div className="containerz">
+                        <div className="bloc-tabs">
+                            <button
+                                className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+                                onClick={() => toggleTab(1)}
+                            >
+                                Description
+                            </button>
+                            <button
+                                className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+                                onClick={() => toggleTab(2)}
+                            >
+                                Specification
+                            </button>
+                            <button
+                                className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+                                onClick={() => toggleTab(3)}
+                            >
+                                Support
+                            </button>
+                        </div>
+
+                        <div className="content-tabs">
+                            <div
+                                className={toggleState === 1 ? "content  active-content" : "content"}
+                            >
+                                <ReactMarkdown>
+                                    {product.mainDesc}
+                                </ReactMarkdown>
+                            </div>
+
+                            <div
+                                className={toggleState === 2 ? "content  active-content" : "content"}
+                            >
+                                <ReactMarkdown>
+                                    {product.specification}
+                                </ReactMarkdown>
+                            </div>
+
+                            <div
+                                className={toggleState === 3 ? "content  active-content" : "content"}
+                            >
+                                <ReactMarkdown>
+                                    {product.support}
+                                </ReactMarkdown>
+                            </div>
                         </div>
                     </div>
                 </div>
